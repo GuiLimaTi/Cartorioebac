@@ -1,79 +1,50 @@
-# 💻 EBAC – Do Zero ao Pro (C Project)
+# Cartório – Command-Line Registry System in C
 
-📚 This repository contains a C programming project developed during the **EBAC – Do Zero ao Pro** course.
+A command-line program in C that registers, searches and deletes people's records, storing each one in its own file. Built during EBAC's "IT Professional: From Zero to Pro" course.
 
-The project is a **command-line (CLI) registry system** that simulates a basic notary office workflow, allowing users to register, search, and delete records using file-based storage.
+**Language:** C · **Platform:** Windows (console) · **Status:** Completed (learning project)
 
----
+## Overview
 
-## 🚀 Project Overview
+The program simulates a simple notary-office ("cartório") workflow. The user chooses an option from a menu and the program creates, reads or deletes a person's record. Records are saved as files, so they persist after the program closes. The interface is in Portuguese.
 
-The system enables the user to:
+## Features
 
-- 📝 Register a person (Create)
-- 🔎 Search for a person by CPF (Read)
-- ❌ Delete a person by CPF (Delete)
+| Option | What it does |
+|---|---|
+| Register | Asks for CPF (Brazilian ID number), first name, last name and role, and saves them to a file named after the CPF |
+| Search | Finds a person by CPF and prints their details |
+| Delete | Removes a person's record by CPF |
+| Exit | Closes the program |
 
-Each user is stored in an individual file named after their CPF.  
-Data is saved in CSV format:
+Each record is stored in CSV format:
 
+```
 CPF,FirstName,LastName,Role
+```
 
-The records remain stored even after the program is closed, ensuring **data persistence**.
+## How to run
 
----
+```bash
+gcc Cartorio.c -o cartorio
+cartorio.exe
+```
 
-## 🧠 Concepts Practiced
+> **Note:** the program uses `system("cls")` and `system("pause")`, which are Windows-specific.
 
-This project consolidates fundamental programming concepts in C:
+## Project structure
 
-- 🔧 Functions and modular structure
-- 📂 File handling (fopen, fprintf, fgets, fclose, remove)
-- ⌨️ User input and output (printf, scanf)
-- 🔄 Control flow (switch, loops, conditionals)
-- 🔤 String manipulation
-- ⚠️ Basic error handling
-- 💾 Persistent storage using the filesystem
+```
+Cartorio.c   Full program: menu, register, search and delete functions
+```
 
----
+## What I learned
 
-## 🗂 Data Structure Example
-
-File name:
-12345678900
-
-File content:
-12345678900,Joao,Souza,Manager
+- Structuring a program into functions with a menu loop
+- Reading and writing files in C (`fopen`, `fprintf`, `fgets`, `fclose`, `remove`)
+- Handling user input and basic errors, such as a record not found
+- Persisting data without a database
 
 ---
 
-## ⚙️ Compilation & Execution
-
-Compile with GCC:
-gcc main.c -o cartorio
-
-Run:
-./cartorio
-
-⚠️ Note: The program uses system("cls") and system("pause"), which are Windows-specific.
-
----
-
-## 🎯 Learning Outcome
-
-This project strengthened:
-
-- 🧩 Logical thinking  
-- 🏗 Structured programming  
-- 📁 Practical file manipulation in C  
-
-It represents an important step in transitioning from theoretical study to applied software development.
-
----
-
-## 👤 Author
-
-**Guilherme Lima**  
-🔄 Career transition to Technology  
-🎓 CS50 Student  
-📊 Future Data Science Student (NCI)
+**Guilherme Lima** · Aspiring IT Support Technician · [LinkedIn](https://www.linkedin.com/in/glimaalmeida) · [GitHub](https://github.com/GuiLimaTi)
